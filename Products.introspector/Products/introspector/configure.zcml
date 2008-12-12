@@ -1,0 +1,32 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:browser="http://namespaces.zope.org/browser">
+
+     <five:implements
+         class="Products.Archetypes.public.BaseObject"
+         interface=".interfaces.IObject"
+         />
+
+    <five:implements
+        class="Products.CMFCore.PortalObject.PortalObjectBase"
+        interface=".interfaces.IObject"
+        />
+
+      <five:traversable class="Products.Archetypes.public.BaseObject" />
+      <five:traversable class="Products.CMFCore.PortalObject.PortalObjectBase" />
+
+      <browser:page
+          for=".interfaces.IObject"
+          name="introspector-index.html"
+          template="introspector-index.pt"
+          class=".forms.Utility"
+          permission="cmf.ManagePortal"
+          />
+                
+
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+
+</configure>
