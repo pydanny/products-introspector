@@ -11,3 +11,9 @@ from zope.interface import Interface
 
 class IObject(Interface):
     pass
+    
+class IPloneSchemaObject(Interface):
+    portal_type = ''
+    portal_type_id = ''
+    allowed_content_types = []
+    fields = []
