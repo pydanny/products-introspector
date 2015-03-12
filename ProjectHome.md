@@ -1,0 +1,1 @@
+Used to introspect both the type architecture and content of a Plone database.
